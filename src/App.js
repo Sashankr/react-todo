@@ -32,6 +32,7 @@ function App() {
           type="text"
           placeholder="Enter your task here"
           value={task}
+          required
           onChange={(event) => {
             setTask(event.target.value);
           }}

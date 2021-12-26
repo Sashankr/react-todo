@@ -21,6 +21,7 @@ button{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-transform: uppercase;
   transition: 0.4s ease;
+  background: #e7e7e7;
 }
 
 button:hover{
@@ -54,6 +55,10 @@ kbd {
   white-space: nowrap;
  }
 
+ /* .error{
+   display: block;
+ } */
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -73,4 +78,10 @@ ul li{
   letter-spacing: 0.3px;
   margin-bottom: 10px;
   box-shadow: 0 0 6px #ddd;
+}
+
+@media(max-width:512px){
+  button{
+    margin-top: 1rem;
+  }
 }
