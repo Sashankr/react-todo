@@ -35,7 +35,9 @@ input{
   outline: unset;
   border-radius: 5px;
   border: unset;
-  background: #e7e7e7;
+  background: #fff;
+  border: 1px solid #ddd;
+  width: 200px;
 }
 
 kbd {
@@ -55,4 +57,20 @@ kbd {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul {
+  list-style-type: none;
+  padding: unset;
+}
+
+ul li{
+  background: #fff;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 6px #ddd;
 }

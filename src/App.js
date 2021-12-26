@@ -8,17 +8,23 @@ function App() {
   const createTask = (e) => {
     e.preventDefault();
     setList((oldListData) => {
+      setTask("");
       return [...oldListData, task];
     });
   };
 
+  const deleteItem = (index) => {
+    setList(list.filter((listItem,listItemIndex)=>{
+      return listItemIndex !== index
+    }))
+  };
   return (
     <div className="App">
       <h2>React Todo List</h2>
       <p>A simple todolist that can add and delete tasks.</p>
       <p>
-        To create a task , you can either click on create button or just press{" "}
-        <kbd>Enter</kbd> on your keyboard
+        To create a task , you can either click on create task button or just
+        press <kbd>Enter</kbd> on your keyboard
       </p>
 
       <form onSubmit={createTask}>
@@ -36,7 +42,15 @@ function App() {
       <p>List of tasks : </p>
       <ul>
         {list.map((listItem, index) => {
-          return <li key={index}>{listItem}</li>;
+          return (
+            <li className="list-item" key={index}>
+              {listItem}
+              <i
+                onClick={()=>{deleteItem(index)}}
+                className="fas fa-times-circle"
+              ></i>
+            </li>
+          );
         })}
       </ul>
     </div>
