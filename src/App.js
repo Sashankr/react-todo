@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-
+let globalId = 0;
 function App() {
   const [task, setTask] = useState("");
   const [list, setList] = useState([]);
@@ -9,13 +9,13 @@ function App() {
     e.preventDefault();
     setList((oldListData) => {
       setTask("");
-      return [...oldListData, task];
+      return [...oldListData, {todo : task , id : globalId++}];
     });
   };
 
-  const deleteItem = (index) => {
-    setList(list.filter((listItem,listItemIndex)=>{
-      return listItemIndex !== index
+  const deleteItem = (taskId) => {
+    setList(oldListData => oldListData.filter((listItem,listItemIndex)=>{
+      return listItem.id !== taskId
     }))
   };
   return (
@@ -44,9 +44,9 @@ function App() {
         {list.map((listItem, index) => {
           return (
             <li className="list-item" key={index}>
-              {listItem}
+              {listItem.todo}
               <i
-                onClick={()=>{deleteItem(index)}}
+                onClick={()=>{deleteItem(listItem.id)}}
                 className="fas fa-times-circle"
               ></i>
             </li>
