@@ -5,6 +5,8 @@ function App() {
   const [task, setTask] = useState("");
   const [list, setList] = useState([]);
 
+  const data = [];
+
   const createTask = (e) => {
     e.preventDefault();
     setList((oldListData) => {
